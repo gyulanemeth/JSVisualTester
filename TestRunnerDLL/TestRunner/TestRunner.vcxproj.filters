@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Interface">
+      <UniqueIdentifier>{8e14a45a-2db0-46a3-92fb-51ffceab7bbe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Screenshot">
+      <UniqueIdentifier>{5efa2a7c-9c65-4b3c-b2d9-1196da634da1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ImageCompare">
+      <UniqueIdentifier>{59087795-ca76-4014-981d-1103f2a0b247}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Commands">
+      <UniqueIdentifier>{be243b0a-7538-4198-aeee-3d2ff19fe4b0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Sources\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\commands.cpp">
+      <Filter>Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\interface.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\screenshot.cpp">
+      <Filter>Screenshot</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\imagecompare.cpp">
+      <Filter>ImageCompare</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Sources\commands.hpp">
+      <Filter>Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\interface.hpp">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\screenshot.hpp">
+      <Filter>Screenshot</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\imagecompare.hpp">
+      <Filter>ImageCompare</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

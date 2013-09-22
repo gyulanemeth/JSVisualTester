@@ -1,0 +1,9 @@
+*TestRunnerDLL/Debug/*
+*TestRunnerDLL/Release/*
+*TestRunnerDLL/TestRunner/Debug/*
+*TestRunnerDLL/TestRunner/Release/*
+*TestRunnerDLL/TestRunner/*.user
+*TestRunnerDLL/ipch/*
+*TestRunnerDLL/*.sdf
+*TestRunnerDLL/*.suo
+*TestRunnerLibrary/*.pyc
