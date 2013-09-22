@@ -19,19 +19,19 @@ def Main (argv):
 	
 	# opens the browser with the given size
 	# the second parameter defines the border sizes of the browser
-	browser.Open (800, 600, [1, 113, 1, 1])
+	browser.Open (800, 600, [2, 114, 2, 2])
 
 	# opens a URL in browser
-	browser.SetURL ('http://kovacsv.github.io/JSModeler/documentation/examples/solids.html')
+	browser.SetURL (os.path.abspath ('exampletest.html'))
 
-	# clicks and capture
-	browser.Click (70, 125)
-	browser.Capture ('tetrahedron');
-	browser.Click (70, 142)
-	browser.Capture ('hexahedron');
-	browser.Click (70, 157)
-	browser.Capture ('octahedron');
-	
+	# events and captures
+	browser.Click (20, 20)
+	browser.Capture ('example');
+	browser.DragDrop (30, 30, 50, 50)
+	browser.Capture ('example');
+	browser.KeyPress (0x41, 0)
+	browser.Capture ('example');
+
 	# close the browser
 	browser.Close ()
 	
