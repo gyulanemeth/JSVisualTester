@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+	 "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+
+<head>
+
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>JSModeler Reference</title>
+	<style>
+		body, html
+		{
+			font-size : 12px;
+			font-family : arial, cursive;
+			margin : 0px;
+			paddgin : 0px;
+		}
+		
+		#frame
+		{
+			padding : 10px;
+		}
+		
+		#example
+		{
+			color : #000000;
+			background : #eeeeee;
+			width : 300px;
+			height : 200px;
+		}
+	</style>
+	<script type="text/javascript">
+		function LogMouseEvent (type, event)
+		{
+			var eventParameters = event;
+			if (eventParameters === undefined) {
+				eventParameters = window.event;
+			}
+			
+			var xCoord = eventParameters.clientX;
+			var yCoord = eventParameters.clientY;
+
+			var logDiv = document.getElementById ('log');
+			logDiv.innerHTML += type + ' (' + xCoord + ', ' + yCoord + ')<br>';
+		}
+		
+		function LogKeyEvent (type, event)
+		{
+			var keyCode = ('which' in event) ? event.which : event.keyCode;
+
+			var logDiv = document.getElementById ('log');
+			logDiv.innerHTML += type + ' (' + keyCode + ')<br>';
+		}
+
+		function Load ()
+		{
+			var exampleDiv = document.getElementById ('example');
+			exampleDiv.addEventListener ('click', function (event) {LogMouseEvent ('click', event)});
+			exampleDiv.addEventListener ('mouseup', function (event) {LogMouseEvent ('mouseup', event)});
+			exampleDiv.addEventListener ('mousedown', function (event) {LogMouseEvent ('mousedown', event)});
+			document.addEventListener ('keyup', function (event) {LogKeyEvent ('keyup', event)});
+			document.addEventListener ('keydown', function (event) {LogKeyEvent ('keydown', event)});
+		}
+	
+	    window.onload = function ()
+		{
+			Load ();			
+		}
+	</script>
+</head>
+
+<body>
+	<div id="frame">
+		<div id="example"></div>
+		<div id="log"></div>
+	</div>
+</body>
+
+</html>
