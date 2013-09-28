@@ -73,7 +73,7 @@ class TestRunner:
 		resultFilePath = os.path.join (self.resultsFolder, 'result.html')
 		htmlTableWriter = HTMLTableWriter.HTMLTableWriter (resultFilePath, 'Result')
 		htmlTableWriter.WriteHeader ();
-		htmlTableWriter.WriteTableHeader (['image 1', 'image 2', 'diff image', 'diff count', 'result']);
+		htmlTableWriter.WriteTableHeader (['file name', 'image 1', 'image 2', 'diff image', 'diff count', 'result']);
 		
 		for fileName in os.listdir (self.referencesFolder):
 			filePath1 = os.path.join (self.referencesFolder, fileName)
@@ -85,22 +85,22 @@ class TestRunner:
 
 			if not os.path.exists (filePath1) or not os.path.exists (filePath2):
 				result = '<span class="failed">not exists</span>'
-				htmlTableWriter.WriteTableRow ([column1, column2, '', '', result]);
+				htmlTableWriter.WriteTableRow ([fileName, column1, column2, '-', '-', result]);
 				continue
 				
 			diffRes = self.testRunner.TRCompareImages (ctypes.c_wchar_p (filePath1), ctypes.c_wchar_p (filePath2), ctypes.c_wchar_p (filePath3))
 			if diffRes == -1:
 				result = '<span class="failed">not equal size</span>'
-				htmlTableWriter.WriteTableRow ([column1, column2, '', '', result]);
+				htmlTableWriter.WriteTableRow ([fileName, column1, column2, '-', '-', result]);
 				continue
 
 			if diffRes > 0:
 				result = '<span class="failed">failed</span>'
-				htmlTableWriter.WriteTableRow ([column1, column2, column3, str (diffRes), result]);
+				htmlTableWriter.WriteTableRow ([fileName, column1, column2, column3, str (diffRes), result]);
 				continue
 
 			result = '<span class="succeeded">succeeded</span>'
-			htmlTableWriter.WriteTableRow ([column1, column2, '', '', result]);
+			htmlTableWriter.WriteTableRow ([fileName, column1, column2, '-', '-', result]);
 		
 		htmlTableWriter.WriteTableFooter ();
 		htmlTableWriter.WriteFooter ();
