@@ -50,6 +50,11 @@ class Browser:
 		self.testRunner.KeyPress (keyCode, scanCode)
 		self.testRunner.Sleep (1000)
 
+	def TextWrite (self, text):
+		self.Message ('browser text write (' + text + ')')
+		self.testRunner.TextWrite (text)
+		self.testRunner.Sleep (1000)
+
 	def Capture (self, name):
 		self.Message ('browser capture (' + name + ')')
 		self.testRunner.CaptureRect (self.rect, self.name + '_' + name + '.png');
